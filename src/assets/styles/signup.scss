@@ -1,0 +1,117 @@
+
+.signup-wrapper {
+  display: flex;
+  gap: 20px;
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Space between logo vector and logo
+    margin-top: 1.5rem;
+
+    .vector {
+      width: 22px; // Adjust size
+      height: 22px;
+    }
+
+    .logoimg {
+      width: 76px; // Adjust size
+      // height: auto;
+    }
+  }
+
+.signup-page {
+  .form-section {
+    width: 100%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .signin-link {
+      color: #007bff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+
+        input {
+          margin-right: 10px;
+        }
+
+        a {
+          color: #007bff;
+          text-decoration: none;
+        }
+      }
+
+      .signup-btn {
+        background-color: #ccc;
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #bbb;
+        }
+
+        &:disabled {
+          background-color: #e0e0e0;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    small {
+      color: #666;
+      font-size: 0.75rem;
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .image-section {
+    // width: 50%;
+
+    .right-img {
+      width: 545px;
+      object-fit: cover;
+    }
+  }
+}
+}
