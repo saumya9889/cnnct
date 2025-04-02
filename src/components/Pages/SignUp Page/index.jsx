@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SignImg from '../../assets/images/signup.png';
-import Logo from '../../assets/images/logo.png';
-import LogoVector from '../../assets/images/logoVector.png';
+import SignImg from '../../../assets/images/signup.png';
+import Logo from '../../../assets/images/logo.png';
+import LogoVector from '../../../assets/images/logoVector.png';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +27,7 @@ const SignUp = () => {
   };
 
   return (
+    <>
     <div className="signup-container">
       <div className="signup-wrapper">
         <div className="signup-page">
@@ -94,7 +95,8 @@ const SignUp = () => {
               </button>
             </form>
             <small>
-              This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+            By creating an account, I agree to our  
+              <a href="#">Terms of use</a> and <a href="#">Privacy Policy </a> apply.
             </small>
           </div>
         </div>
@@ -103,6 +105,8 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 
