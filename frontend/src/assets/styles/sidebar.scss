@@ -1,0 +1,57 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    nav ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+  
+        &:hover, &.active {
+          background: #e2e6ea;
+          border-radius: 8px;
+        }
+      }
+    }
+  
+    .create-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .user {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+  

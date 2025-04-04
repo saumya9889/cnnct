@@ -1,0 +1,44 @@
+.event-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    border-top: 5px solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+  
+      .edit-icon {
+        cursor: pointer;
+        color: #777;
+      }
+    }
+  
+    .time {
+      color: #2563eb;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+  
+    .desc {
+      font-size: 14px;
+      color: #555;
+    }
+  
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+  
+      .delete-icon {
+        cursor: pointer;
+        color: #e63946;
+      }
+    }
+  }
+  

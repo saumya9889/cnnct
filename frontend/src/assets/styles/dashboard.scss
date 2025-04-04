@@ -1,0 +1,31 @@
+.dashboard {
+    display: flex;
+  
+    main {
+      flex-grow: 1;
+      padding: 20px;
+  
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+  
+        .add-event {
+          background: #2563eb;
+          color: white;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+  
+      .event-list {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  
