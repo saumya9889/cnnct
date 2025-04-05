@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SignImg from '../../../assets/images/signup.png';
 import Logo from '../../../assets/images/logo.png';
 import LogoVector from '../../../assets/images/logoVector.png';
-
+import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -12,7 +12,7 @@ const SignUp = () => {
     confirmPassword: '',
     agreed: false,
   });
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({ 
@@ -43,14 +43,17 @@ const SignUp = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload), // ✅ Send only required fields
+        body: JSON.stringify(payload),
       });
   
       const data = await res.json();
   
       if (res.ok) {
+        // Store user data in localStorage
+        localStorage.setItem("userData", JSON.stringify(data.user));
         alert("Account created successfully!");
         console.log("Created User:", data);
+        navigate("/preferences");
       } else {
         alert(data.message || "Something went wrong");
         console.log("Server Error:", data);
@@ -127,7 +130,7 @@ const SignUp = () => {
                 />
                 <span className='checkbox-text'>By creating an account, I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</span>
               </label>
-              <button type="submit" className="signup-btn" disabled={!formData.agreed}>
+              <button type="submit" className="signup-btn" disabled={!formData.agreed} >
                 Create an account
               </button>
             </form>

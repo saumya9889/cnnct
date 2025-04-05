@@ -2,6 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaCog, FaClock } from "react-icons/fa";
 import { TbCalendarEvent } from "react-icons/tb";
 
+
 const Sidebar = () => {
   return (
     <aside className="sidebar">
