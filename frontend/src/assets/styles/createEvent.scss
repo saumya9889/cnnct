@@ -1,0 +1,99 @@
+.event-page {
+    display: flex;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-right: 2px solid #007bff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .sidebar h2 {
+    color: #007bff;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 15px 0;
+    cursor: pointer;
+  }
+  
+  .create-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 40px;
+    background: #f9f9f9;
+  }
+  
+  .form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    max-width: 600px;
+  }
+  
+  .form-box h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .form-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-box label {
+    margin-bottom: 15px;
+  }
+  
+  .form-box input,
+  .form-box textarea,
+  .form-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .form-buttons button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form-buttons button:first-child {
+    background: #eee;
+  }
+  
+  .form-buttons button:last-child {
+    background: #007bff;
+    color: white;
+  }
+  
