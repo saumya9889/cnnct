@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   category: { type: String },
 }, { timestamps: true });
 
-// Pre-save middleware to generate username from email
+// Pre-save middleware to generate username from email    
 userSchema.pre('save', function(next) {
   if (!this.username) {
     this.username = this.email.split('@')[0];
@@ -19,3 +19,5 @@ userSchema.pre('save', function(next) {
 
 const User = mongoose.model('User', userSchema);
 export default User;
+
+

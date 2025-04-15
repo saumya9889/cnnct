@@ -1,99 +1,157 @@
-.event-page {
-    display: flex;
-    height: 100vh;
-    font-family: 'Inter', sans-serif;
+$primary-color: #1877F2;
+$gray-border: #e5e7eb;
+$light-bg: #f3f4f6;
+
+// .container {
+//   padding: 2rem;
+//   background-color: #f9f9f9;
+// }
+
+.head-title {
+  margin-left: 2rem;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+  .heading {
+    font-size: 26px;
+    font-weight: 600;
   }
-  
-  .sidebar {
-    width: 220px;
-    background: #f4f4f4;
-    padding: 20px;
-    border-right: 2px solid #007bff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+  .subtitle {
+    font-size: 12px;
   }
-  
-  .sidebar h2 {
-    color: #007bff;
+}
+
+.event-form-container {
+  margin: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  width: 1026px;
+
+  h2 {
+    color: $primary-color;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
   }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// 👇 New row-wise input group styling
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-align: center;
+  justify-content: center;
+
+
+  label {
+    flex: 0 0 180px; // label width
+    font-weight: 500;
+    font-size: 14px;
+    color: #343434;
+    font-family: "poppins";
+    // text-align: right;
+
+    span {
+      color: red;
+      margin-left: 4px;
+    }
   }
-  
-  .sidebar li {
-    margin: 15px 0;
-    cursor: pointer;
-  }
-  
-  .create-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
+
+  input,
+  select,
+  textarea {
+    // flex: 1;
     padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 40px;
-    background: #f9f9f9;
-  }
-  
-  .form-box {
-    background: white;
-    padding: 30px;
+    font-size: 14px;
+    border: 1px solid $gray-border;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-    max-width: 600px;
+    outline: none;
+    background-color: #fff;
+    width: 54%;
   }
-  
-  .form-box h2 {
-    color: #007bff;
-    margin-bottom: 20px;
+
+  textarea {
+    min-height: 70px;
+    resize: none;
+    width: 54%;
   }
-  
-  .form-box form {
+}
+
+.datetime-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 54%;
+  // margin-bottom: 16px;
+
+  label {
+    flex: 0 0 180px;
+    font-weight: 500;
+    font-size: 14px;
+    // text-align: right;
+
+    span {
+      color: red;
+      margin-left: 4px;
+    }
+  }
+
+  .datetime-fields {
+    flex: 1;
     display: flex;
-    flex-direction: column;
+    gap: 0.5rem;
+
+    input,
+    select {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid $gray-border;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
   }
-  
-  .form-box label {
-    margin-bottom: 15px;
-  }
-  
-  .form-box input,
-  .form-box textarea,
-  .form-box select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .form-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .form-buttons button {
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 88%;
+
+  .cancel-btn {
     padding: 10px 20px;
-    border-radius: 5px;
+    background: $light-bg;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
+    font-weight: 500;
+    width: 110px;
   }
-  
-  .form-buttons button:first-child {
-    background: #eee;
+
+  .save-btn {
+    padding: 10px 20px;
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 110px;
   }
-  
-  .form-buttons button:last-child {
-    background: #007bff;
-    color: white;
-  }
-  
+}
+

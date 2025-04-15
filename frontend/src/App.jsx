@@ -5,6 +5,7 @@ import SignUp from './components/Pages/SignUp Page';
 import LogIn from './components/Pages/LogIn Page';
 import { Preferences } from './components/Prefernces';
 import Dashboard from './components/Pages/DashBoard';
+import CreateEvent from './components/CreateEventForm';
 import ProtectedRoute from './components/ProtectedRoutes';
 
 function App() {
@@ -28,6 +29,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/create-event" 
+          element={
+            <ProtectedRoute>
+              <CreateEvent />
             </ProtectedRoute>
           } 
         />

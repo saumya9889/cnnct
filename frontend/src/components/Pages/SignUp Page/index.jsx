@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import LogoSection from "../../common/Logo";
 
 
+
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -13,6 +14,7 @@ const SignUp = () => {
     confirmPassword: "",
     agreed: false,
   });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -24,9 +26,15 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
     if (!formData.agreed) {
-      alert("Please agree to the terms");
+      setError("Please agree to the terms");
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
       return;
     }
 
@@ -55,11 +63,12 @@ const SignUp = () => {
         console.log("Created User:", data);
         navigate("/preferences");
       } else {
-        alert(data.message || "Something went wrong");
+        setError(data.message || "Something went wrong");
         console.log("Server Error:", data);
       }
     } catch (err) {
       console.error("Error:", err);
+      setError("Failed to connect to server. Please make sure the server is running.");
     }
   };
 
@@ -78,6 +87,7 @@ const SignUp = () => {
                   Sign in instead
                 </a>
               </div>
+              {error && <div className="error-message">{error}</div>}
               <form onSubmit={handleSubmit}>
                 <label htmlFor="firstName">First Name</label>
                 <input

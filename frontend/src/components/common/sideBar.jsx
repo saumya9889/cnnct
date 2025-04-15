@@ -4,7 +4,7 @@ import { TbCalendarEvent } from "react-icons/tb";
 import profileImage from "../../assets/images/display.avif";
 import LogoSection from "./Logo";
 
-const Sidebar = () => {
+const Sidebar = ({onCreateClick}) => {
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
   const displayName = userData.username || userData.firstName || "User";
 
@@ -29,9 +29,8 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
-      <button onClick={() => setShowForm(true)} className="create-button">
-  + Create
-</button>
+      <button className="create-btn" onClick={onCreateClick}>+ Create</button>
+
 
           
       <div className="profile-section">
