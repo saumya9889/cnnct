@@ -104,6 +104,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../../../components/common/sideBar";
 import EventCard from "../../../components/common/EventCard";
 import CreateEventForm from "../../CreateEventForm";
+import { DashBoardTemplate } from "../../common/DashBoardTemplate";
 
 const Dashboard = () => {
   const [events, setEvents] = useState([]);
@@ -154,22 +155,11 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Sidebar
-        onCreateClick={() => {
-          setShowForm(true);
-          setFormData(null);
-        }}
-      />
-      <main>
-        {showForm && (
-          <CreateEventForm
-            onClose={() => setShowForm(false)}
-            onEventCreated={handleEventCreated}
-            formData={formData}
-          />
-        )}
-
-        <div className="event-list">
+    <DashBoardTemplate  onCreateClick={() => {
+    setShowForm(true);
+    setFormData(null);
+  }}>
+          <div className="event-list">
           {events.map((event, index) => (
             <EventCard
               key={index}
@@ -181,7 +171,17 @@ const Dashboard = () => {
             />
           ))}
         </div>
-      </main>
+    
+        {showForm && (
+          <CreateEventForm
+            onClose={() => setShowForm(false)}
+            onEventCreated={handleEventCreated}
+            formData={formData}
+          />
+        )}
+
+  </DashBoardTemplate>
+     
     </div>
   );
 };

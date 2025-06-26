@@ -7,6 +7,9 @@ import { Preferences } from './components/Prefernces';
 import Dashboard from './components/Pages/DashBoard';
 import CreateEvent from './components/CreateEventForm';
 import ProtectedRoute from './components/ProtectedRoutes';
+import { Event } from './components/Pages/Events/Event';
+import { Bookings } from './components/Pages/Bookings/bookings';
+import CreateEventForm from './components/CreateEventForm';
 
 function App() {
   return (
@@ -30,6 +33,24 @@ function App() {
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/event" 
+          element={ 
+              <Event /> 
+          } 
+        />
+          <Route 
+          path="/bookings" 
+          element={ 
+              <Bookings /> 
+          } 
+        />
+            <Route 
+          path="/create_event_form" 
+          element={ 
+              <CreateEventForm /> 
           } 
         />
         <Route 

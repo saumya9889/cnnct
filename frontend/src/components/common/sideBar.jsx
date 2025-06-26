@@ -3,6 +3,7 @@ import { FaCalendarAlt, FaCog, FaClock } from "react-icons/fa";
 import { TbCalendarEvent } from "react-icons/tb";
 import profileImage from "../../assets/images/display.avif";
 import LogoSection from "./Logo";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ onCreateClick, onViewEventsClick }) => {
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
@@ -16,11 +17,15 @@ const Sidebar = ({ onCreateClick, onViewEventsClick }) => {
 
       <nav>
         <ul>
-          <li onClick={onViewEventsClick} style={{ cursor: "pointer" }}>
+        <li>
+          <Link to={'/event'} onClick={onViewEventsClick} style={{ cursor: "pointer" }}>
             <TbCalendarEvent /> Events
+          </Link>
           </li>
           <li>
+          <Link to={'/bookings'}>
             <FaCalendarAlt /> Bookings
+          </Link>
           </li>
           <li>
             <FaClock /> History
@@ -32,7 +37,7 @@ const Sidebar = ({ onCreateClick, onViewEventsClick }) => {
       </nav>
 
       <button className="create-btn" onClick={onCreateClick}>
-        + Create
+       <Link to={'/create_event_form'}> + Create</Link>
       </button>
 
       <div className="profile-section">

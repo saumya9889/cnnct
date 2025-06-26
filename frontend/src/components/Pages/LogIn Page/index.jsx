@@ -30,7 +30,7 @@ const LogIn = () => {
       if (res.ok) {
         alert("Login successful!");
         localStorage.setItem("token", data.token); // 🧠 Store token
-        navigate("/dashboard"); // 👈 protected route
+        navigate("/event"); // 👈 protected route
       } else {
         alert(data.message || "Invalid credentials");
       }

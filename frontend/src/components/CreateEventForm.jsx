@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from "react";
+// import { CommonTemplate } from "./common/CommonTemplate";
+import { DashBoardTemplate } from "./common/DashBoardTemplate";
 
 const CreateEventForm = ({ onClose, onEventCreated, formData: initialData = {} }) => {
   const [hostOptions, setHostOptions] = useState(["Saumya"]);
@@ -62,6 +64,8 @@ const CreateEventForm = ({ onClose, onEventCreated, formData: initialData = {} }
   };
 
   return (
+    <>
+     <DashBoardTemplate>
     <div className="container">
       <div className="head-title">
         <h2 className="heading">Create Event</h2>
@@ -138,7 +142,8 @@ const CreateEventForm = ({ onClose, onEventCreated, formData: initialData = {} }
           </div>
         </form>
       </div>
-    </div>
+    </div></DashBoardTemplate>
+    </>
   );
 };
 

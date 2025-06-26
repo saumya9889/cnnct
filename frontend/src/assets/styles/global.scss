@@ -7,6 +7,7 @@
 @import "./dashboard.scss";
 @import "./eventcard.scss";
 @import "./createEvent.scss";
+@import "./eventPage.scss";
 
 
 body {
@@ -24,4 +25,10 @@ body {
   margin: 0 auto;
   width: 90%;
 }
-  
+
+.main-dashboard-wrapper {
+  display: grid
+  ;
+      grid-template-columns: 250px 1fr;
+      gap: 1rem;
+}

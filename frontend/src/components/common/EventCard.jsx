@@ -1,33 +1,3 @@
-// import React from "react";
-// import { FaEdit, FaTrash, FaCopy } from "react-icons/fa";
-
-// const EventCard = ({ title, time, color, active, onDelete, onEdit, onToggle, onCopy }) => {
-//   return (
-//     <div className="event-card" style={{ borderTopColor: color }}>
-//       <div className="header">
-//         <h3>{title}</h3>
-//         <FaEdit className="edit-icon" onClick={onEdit} title="Edit" />
-//       </div>
-
-//       <p className="date">Friday, 28 Feb</p>
-//       <p className="time">{time}</p>
-//       <p className="desc">1hr. Group meeting</p>
-
-//       <div className="footer">
-//         <label className="switch">
-//           <input type="checkbox" checked={active} onChange={onToggle} />
-//           <span className="slider round"></span>
-//         </label>
-
-//         <FaCopy className="copy-icon" onClick={onCopy} title="Copy details" />
-//         <FaTrash className="delete-icon" onClick={onDelete} title="Delete" />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default EventCard;
-
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { LuCopy } from "react-icons/lu";
@@ -68,6 +38,7 @@ const EventCard = ({ event, onEdit, onDelete, onCopy, onToggle }) => {
   const formattedTime = formatTimeRange(time, meridian, duration);
 
   return (
+    <>
     <div
       className="event-card"
       style={{ borderTopColor: active ? "#2563eb" : "#4B5563" }}
@@ -93,7 +64,9 @@ const EventCard = ({ event, onEdit, onDelete, onCopy, onToggle }) => {
         <LuCopy onClick={() => onCopy(event)} />
         <FaTrash className="delete-icon" onClick={() => onDelete(event._id)}/>
         </div>
+
     </div>
+    </>
   );
 };
 
