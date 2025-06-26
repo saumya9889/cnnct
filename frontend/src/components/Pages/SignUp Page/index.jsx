@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import SignImg from "../../../assets/images/signup.png";
 import { useNavigate } from "react-router-dom";
 import LogoSection from "../../common/Logo";
-
-
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +13,7 @@ const SignUp = () => {
     confirmPassword: "",
     agreed: false,
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -26,7 +25,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     if (!formData.agreed) {
       setError("Please agree to the terms");
@@ -68,7 +67,9 @@ const SignUp = () => {
       }
     } catch (err) {
       console.error("Error:", err);
-      setError("Failed to connect to server. Please make sure the server is running.");
+      setError(
+        "Failed to connect to server. Please make sure the server is running."
+      );
     }
   };
 
@@ -78,14 +79,14 @@ const SignUp = () => {
         <div className="signup-wrapper">
           <div className="signup-page">
             <div className="logo">
-              <LogoSection/>
+              <LogoSection />
             </div>
             <div className="form-section">
               <div className="title-wrap">
                 <h1>Create an account</h1>
-                <a href="#" className="signin-link">
+                <Link to="/login" className="signin-link">
                   Sign in instead
-                </a>
+                </Link>
               </div>
               {error && <div className="error-message">{error}</div>}
               <form onSubmit={handleSubmit}>

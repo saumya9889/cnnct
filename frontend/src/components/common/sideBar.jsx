@@ -4,7 +4,7 @@ import { TbCalendarEvent } from "react-icons/tb";
 import profileImage from "../../assets/images/display.avif";
 import LogoSection from "./Logo";
 
-const Sidebar = ({onCreateClick}) => {
+const Sidebar = ({ onCreateClick, onViewEventsClick }) => {
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
   const displayName = userData.username || userData.firstName || "User";
 
@@ -13,9 +13,10 @@ const Sidebar = ({onCreateClick}) => {
       <div className="logo">
         <LogoSection />
       </div>
+
       <nav>
         <ul>
-          <li>
+          <li onClick={onViewEventsClick} style={{ cursor: "pointer" }}>
             <TbCalendarEvent /> Events
           </li>
           <li>
@@ -29,10 +30,11 @@ const Sidebar = ({onCreateClick}) => {
           </li>
         </ul>
       </nav>
-      <button className="create-btn" onClick={onCreateClick}>+ Create</button>
 
+      <button className="create-btn" onClick={onCreateClick}>
+        + Create
+      </button>
 
-          
       <div className="profile-section">
         <img src={profileImage} alt="Profile" className="profile-image" />
         <span className="username">{displayName}</span>
